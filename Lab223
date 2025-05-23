@@ -4,9 +4,9 @@ public class Money {
   private uint _rubles;
   private byte _kopeks;
 
-  public Money(uint rubles, byte kopeks) {
-    _rubles = rubles + (uint)(kopeks / 100);
-    _kopeks = (byte)(kopeks % 100);
+  public Money(uint _rubles, byte _kopeks) {
+    _rubles = _rubles + (uint)(_kopeks / 100);
+    _kopeks = (byte)(_kopeks % 100);
   }
 
   public static Money operator +(Money m1, uint m2) {
