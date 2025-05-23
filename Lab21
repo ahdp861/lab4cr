@@ -56,8 +56,8 @@ public class ImportantString : StringWithExclamation {
 public class Program {
   public static void Main(string[] args) {
     Console.WriteLine("какая хотите строка:");
-    string a = Console.ReadLine();
-    var str1 = new StringWithExclamation(a);
+    string inputString = Console.ReadLine();
+    var str1 = new StringWithExclamation(inputString);
     Console.WriteLine($"конструктор по умолчанию - {str1}");
 
     var str2 = new StringWithExclamation(str1);
@@ -66,8 +66,8 @@ public class Program {
     Console.WriteLine($"метод для добавления восклицательных знаков - {str2}");
 
     Console.WriteLine("какая хотите строка:");
-    a = Console.ReadLine();
-    var extStr1 = new ImportantString(a);
+    inputString = Console.ReadLine();
+    var extStr1 = new ImportantString(inputString);
     Console.WriteLine($"конструктор по умолчанию и метод уменьшения важности - {extStr1}");
 
     extStr1.PriorityIncrease();
@@ -82,22 +82,22 @@ public class Program {
     Console.WriteLine(extStr2);
 
     Console.WriteLine("какая хотите строка:");
-    a = Console.ReadLine();
-    var str3 = new ImportantString(a);
+    inputString = Console.ReadLine();
+    var str3 = new ImportantString(inputString);
     Console.WriteLine("+/-/exit:");
-    a = Console.ReadLine();
-    while (a != "exit") {
-      if (a == "+") {
+    inputString = Console.ReadLine();
+    while (inputString != "exit") {
+      if (inputString == "+") {
         str3.PriorityIncrease();
       }
-      if (a == "-") {
+      if (inputString == "-") {
         str3.PriorityDecrease();
       }
 
       Console.WriteLine(str3);
 
       Console.WriteLine("+/-/exit:");
-      a = Console.ReadLine();
+      inputString = Console.ReadLine();
     }
   }
 }
